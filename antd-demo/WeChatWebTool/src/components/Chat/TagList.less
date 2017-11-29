@@ -1,0 +1,87 @@
+.chat-tags {
+  width: 260px;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.tag-head{
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.tag-body{
+  flex: 1;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tag-item-body{
+  width: 100%;
+  height: 150px;
+  overflow-y: auto;
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+  position: relative;
+  .tag-item{
+    line-height:25px;
+    cursor: pointer;
+    &.actived{
+      color: red;
+    }
+  }
+}
+.tag-user-list{
+  flex: 1;
+  width: 100%;
+  overflow-y: auto;
+  position: relative;
+  li{
+    border-bottom: 1px solid #ddd;
+    background: #FFF;
+    height: 70px;
+    padding: 5px 0 5px 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .content{
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      margin: 0 10px 0 20px;
+      overflow: hidden;
+      padding-bottom: 5px;
+      b{
+        flex: 1;
+        color: #222;
+        font-weight: normal;
+        font-size: 16px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      span{
+        flex: 1;
+        color: #999;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        margin-top: 5px;
+        display: flex;
+        a{
+          flex: 1;
+        }
+      }
+    }
+  }
+}

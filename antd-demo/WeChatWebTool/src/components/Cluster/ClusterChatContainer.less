@@ -1,0 +1,404 @@
+:global{
+
+  // 第三个我的消息布局
+  .cluster-group {
+    overflow: hidden;
+    min-width: 400px;
+    height: 100%;
+    background: #fcfcfc;
+    .cluster-items-left{
+      float: left;
+      width: 250px;
+      overflow-y: auto;
+      height: 100%;
+      position: relative;
+    }
+    .cluster-group-content{
+      margin: 0 0 0 250px;
+      height: 100%;
+      border-left: 1px solid #ddd;
+      position: relative;
+      .cluster-message-head{
+        // 这里高度为60
+        min-height: 60px;
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+      }
+      .cluster-right, .cluster-message{
+        padding-top: 60px;
+        box-sizing: border-box;
+        height: 100%;
+        .cluster-message-body{
+          top: 60PX;
+        }
+      }
+      .cluster-right{
+        float: right;
+        width: 600px;
+        .cluster-mymsgs{
+          float: left;
+          width: 350px;
+          height: 100%;
+          border-right: 1px solid #ddd;
+          overflow-y: auto;
+        }
+        //最右边群管理布局
+        .cluster-manage{
+          background: #ffffff;
+          height: 100%;
+          margin-left: 350px;
+          position: relative;
+        }
+      }
+      .cluster-message{
+        margin: 0 600px 0 0;
+        border: 1px solid #ddd;
+        border-left: 0;
+        border-top: 0;
+        border-bottom: 0;
+        background: #FFF;
+        position: relative;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1360px){
+    .cluster-group .cluster-group-content{
+      .cluster-right{
+        width: 520px;
+        .cluster-mymsgs{
+          width: 320px;
+        }
+        .cluster-manage{
+          margin-left: 320px;
+        }
+      }
+      .cluster-message{
+        margin: 0 520px 0 0;
+      }
+    }
+  }
+  @media screen and (max-width: 1280px){
+    .cluster-group .cluster-group-content{
+      .cluster-right{
+        width: 500px;
+        .cluster-mymsgs{
+          width: 300px;
+        }
+        .cluster-manage{
+          margin-left: 300px;
+        }
+      }
+      .cluster-message{
+        margin: 0 500px 0 0;
+      }
+    }
+  }
+  @media screen and (max-width: 1024px){
+    .cluster-group .cluster-group-content{
+      .cluster-right{
+        width: 390px;
+        .cluster-mymsgs{
+          width: 210px;
+        }
+        .cluster-manage{
+          margin-left: 210px;
+        }
+      }
+      .cluster-message{
+        margin: 0 390px 0 0;
+      }
+    }
+  }
+
+  .cluster-item, .cluster-manage-item {
+    border-bottom: 1px solid #ddd;
+    background: #FFF;
+    .cluster-item-left{
+      float: left;
+      padding: 0 5px;
+      position: relative;
+      .cluster-msgcount{
+        position: absolute;
+        right: -3px;
+        top: -3px;
+        font-size: 12px;
+        background-color: rgb(255, 85, 0);
+        min-width: 16px;
+        text-align: center;
+        height: 16px;
+        line-height: 16px;
+        border-radius: 8px;
+        color: #FFF;
+        box-shadow: rgb(255, 255, 255) 0px 0px 0px 1px;
+      }
+    }
+    .cluster-photo{
+      display: block;
+      width: 50px;
+      height: 50px;
+      border-radius: 4px;
+    }
+    .cluster-item-right{
+      margin-left: 65px;
+      padding-right: 3px;
+      .cluster-item-title{
+        width: 100%;
+        line-height: 23px;
+        h3{
+          color: #222;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        i{
+          display: table-cell;
+          text-align: right;
+          font-style: normal;
+          color: #999;
+        }
+      }
+      .cluster-item-message{
+        p{
+          line-height: 25px;
+          color: #999;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+
+  .cluster-manage-item{
+    .cluster-photo{
+      width: 65px;
+      height: 65px;
+    }
+    .cluster-item-right{
+      margin-left: 80px;
+      .cluster-item-message{
+        p{
+          color: #222;
+        }
+      }
+      .item_num{
+        line-height: 23px;
+        color: #c1c1c1;
+      }
+    }
+
+  }
+
+  .cluster-item a, .cluster-manage-item a {
+    overflow: hidden;
+    display: block;
+    padding: 5px 0;
+  }
+  .cluster-item a:hover, .cluster-manage-item a:hover{
+    background: #e0e0e0;
+  }
+  .cluster-item a.actived, .cluster-manage-item a.actived{
+    background: #d0d0d0;
+  }
+
+  /** 发送消息的表单 */
+  .cluster-send-msg-form{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 160px;
+    .toolbar{
+      border: 1px solid #e0e0e0;
+      border-left: 0;
+      border-right: 0;
+      padding: 5px 0;
+      .ant-btn{
+        margin-left: 8px;
+      }
+      .tips{
+        color: #888;
+        font-size: 12px;
+        float: right;
+        line-height: 30px;
+      }
+    }
+
+    .input-conatiner{
+      padding: 8px;
+      .editArea{
+        height: 6em;
+        overflow-y: auto;
+        overflow-x: hidden;
+        outline: 0;
+        border: 0;
+        font-size: 15px;
+        margin: 0;
+        white-space: pre-wrap;
+        word-break: initial;
+        img{
+          vertical-align: text-bottom;
+        }
+      }
+    }
+  }
+
+  /** 聊天内容展示 */
+  .cluster-message-head{
+    border-bottom: 1px solid #ddd;
+    padding: 5px 8px;
+    cursor: pointer;
+    background: #fff;
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    img{
+      float: left;
+      width: 50px;
+      height: 50px;
+      border-radius: 4px;
+    }
+    h1{
+      display: inline-block;
+      font-size: 16px;
+      color: #000;
+      margin-left: 10px;
+      line-height: 50px;
+    }
+    .operation-type{
+      position: absolute;
+      top: 15px;
+      float: right;
+      right: 600px;
+    }
+  }
+  .cluster-message-body{
+    overflow-y: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0px;
+    bottom: 160px;
+    padding-bottom: 30px;
+    background-color: #f9f9f9;
+  }
+  .cluster-at-items , .cluster-message-body{
+    .cluster-message-item{
+      padding: 8px 8px 0 8px;
+      position: relative;
+      .msg-item{
+        color: #006efe;
+        font-size: 14px;
+        cursor: pointer;
+        line-height: 28px;
+        label{
+          margin-left: 10px;
+          cursor: pointer;
+        }
+        .ant-tag{
+          margin-left: 10px;
+        }
+      }
+      .msg-time-split {
+        text-align: center;
+        b{
+          display: inline-block;
+          background: #d0d0d0;
+          padding: 2px 5px;
+          border-radius: 3px;
+          color: #fff;
+          font-weight: normal;
+        }
+      }
+      .message{
+        z-index: 1;
+        font-size: 15px;
+        color: #000;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+        display: inline-block;
+        word-break: break-all;
+        .msg-image{
+          display: inline-block;
+          width: 100px;
+          height: auto;
+          padding: 8px;
+          border-radius: 4px;
+          background-color: #FFF;
+        }
+        .msg-audio{
+          display: inline-block;
+          height: 50px;
+          padding: 8px;
+          border-radius: 4px;
+          background-color: #FFF;
+        }
+      }
+    }
+    .ant-tag{
+      margin-left: 10px;
+    }
+    .arrow-right{
+      text-align: right;
+      p{
+        color: #000000;
+      }
+      .message{
+        background-color: #64da9f;
+        border: 1px solid #3eb888;
+      }
+    }
+    .load-more{
+      display: block;
+      text-align: center;
+      color: #999;
+      font-size: 14px;
+      line-height: 30px;
+    }
+  }
+  .cluster-at-items {
+    .cluster-message-item{
+      padding: 5px 8px;
+    }
+  }
+
+  .cluster-items-left, .cluster-manage{
+    .cluster-manager-container{
+      height: 100%;
+      width: 100%;
+      .cluster-items-body{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0px;
+        bottom: 0px;
+        overflow-y: auto;
+      }
+      .cluster-manager-body{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50px;
+        bottom: 0px;
+        overflow-y: auto;
+      }
+      .load-more{
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        overflow: hidden;
+      }
+      .hidden{
+        display: none;
+      }
+    }
+  }
+}

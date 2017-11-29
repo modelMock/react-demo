@@ -1,0 +1,70 @@
+/** 整个布局 */
+.chat-container {
+  overflow: hidden;
+  min-width: 400px;
+  height: 100%;
+  background: rgb(240, 240, 240);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+
+.chat-main {
+  flex: 1;
+  overflow-y: auto;
+  height: 100%;
+  border: 1px solid #ddd;
+  border-top: 0;
+  border-bottom: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-header{
+  border-bottom: 1px solid #ddd;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 8px;
+  cursor: pointer;
+  background: #fff;
+  box-shadow: 0 1px 1px rgba(0,0,0,.1);
+  display: flex;
+  align-items: center;
+  h1{
+    display: inline-block;
+    font-size: 16px;
+    color: #000;
+    margin: 0 10px;
+  }
+  .opt-btns{
+    flex: 1;
+    button{
+      margin-left: 16px;
+    }
+  }
+}
+.load-more-top {
+  line-height:30px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: underline;
+  i{
+    margin-right: 5px;
+  }
+}
+.load-more-bottom{
+  width: 100%;
+  text-align: center;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #fff;
+}
+.data-loading{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

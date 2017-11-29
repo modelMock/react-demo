@@ -1,0 +1,38 @@
+.comment-list{
+  flex: 1;
+  overflow-y: auto;
+  position: relative;
+}
+.comment-item{
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  p{
+    line-height: 28px;
+    overflow: hidden;
+    .content{
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-right: 8px;
+    }
+    .comment-op{
+      float: right;
+    }
+  }
+}
+.as-information-name{
+  line-height: 30px;
+  font-size: 16px;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+.as-information-container{
+  height:600px;
+  overflow-y: auto;
+  .as-information-item{
+    margin-top: 30px;
+    p{
+      line-height: 30px;
+    }
+  }
+}

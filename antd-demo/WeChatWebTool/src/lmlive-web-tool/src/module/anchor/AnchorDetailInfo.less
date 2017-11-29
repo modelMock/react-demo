@@ -1,0 +1,108 @@
+:global{
+  .anchor-detailinfo-container{
+    font-size: 12px;
+    .anchor-table-title{
+      width:100%;
+      background-color: #f0f0f0;
+      font-weight: bold;
+      padding: 2px 12px;
+      margin-top: 8px;
+      border-radius: 4px 4px 0px 0px;
+    }
+    //table公共属性
+    table{
+      width: 100%;
+      border-radius: 0px 0px 4px 4px;
+      border-collapse:collapse;
+      border: 1px solid #d9d9d9;
+      margin-bottom: 16px;
+      .hidden{
+        display: none;
+      }
+      tr td{
+        padding: 5px 8px;
+      }
+    }
+    //给table加边框
+    .table-border{
+      tr td{
+        border-left: 1px solid #d9d9d9 ;
+        border-bottom: 1px solid #d9d9d9;
+        text-align: center;
+      }
+      tr td:nth-child(1){
+        border-left: none;
+      }
+      tr:last-child td{
+        border-bottom: none;
+      }
+    }
+    //主播信息
+    .anchor-info{
+      tr td {
+        padding: 5px 8px;
+        &:nth-child(even){
+          text-align: right;
+        }
+        &:nth-child(odd){
+          text-align: left;
+        }
+        &:nth-child(2){
+          text-align: left;
+          width: 58px;
+        }
+        &:nth-child(1){
+          width: 100px;
+        }
+        img{
+          width: 150px;
+          height: 150px;
+        }
+      }
+    }
+    //直播信息
+    .live-info{
+      tr td:first-child{
+        width: 10%;
+      }
+      &>tr>td:last-child{
+        width: 40%;
+      }
+      div{
+        width: 100px;
+        height: 60px;
+        text-align: center;
+        padding: 8px 0px;
+        float: left;
+        margin-left: 30px;
+      }
+      div.live-info-div1{
+        background-color: rgba(153, 204, 153, 1);
+      }
+      div.live-info-div2{
+        background-color: rgba(204, 255, 153, 1);
+      }
+      div.live-info-div3{
+        background-color: rgba(255, 255, 153, 1);
+      }
+      div.live-info-div4{
+        background-color: rgba(204, 204, 204, 1);
+      }
+      .table-recent-info{
+        text-align: center;
+        tr td:first-child{
+          width: 10%;
+        }
+      }
+    }
+    //多列布局容器
+    .anchor-flow{
+      display: flex;
+      width: 100%;
+      justify-content:space-between;
+      .anchor-parts{
+        width: 40%;
+      }
+    }
+  }
+}

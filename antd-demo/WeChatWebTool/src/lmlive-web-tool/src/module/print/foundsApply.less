@@ -1,0 +1,97 @@
+
+/*用款申请*/
+.founds-apply{
+  font-family: Microsoft YaHei,SimSun,楷体_GB2312,宋体; /*默认字体*/
+
+  /*真正打印的正文的最外层元素*/
+  .doc-to-print-main {
+    margin-top: 104px;
+    margin-left: 0px;
+    width: 840px;
+    color: #000; /*设置黑色背景，否则网页打印的时候会模糊一片*/
+    /*height: 529px;*/
+    page-break-after: always; /*分页*/
+    /*background-color: aquamarine;*/
+  }
+
+  /*顶部和各个栏目的 label 都需要 散列分布两段对齐*/
+  .head-title , .each-cell-border-title{
+    text-align: justify;
+    text-justify: distribute-all-lines;
+    text-align-last: justify;
+  }
+
+  /*头部标题,分散排列，两段对齐*/
+  .head-title {
+    font-family: 宋体;
+    width: 227px;
+    font-size: 24px;
+    margin: 0 auto; /*水平居中*/
+  }
+
+  /*标题下面的横线*/
+  .line-under-title {
+    width: 265px;
+    height: 1px;
+    border-bottom: 1px solid black;
+    margin: 1px auto auto;
+  }
+  /*票据填写的时间*/
+  .doc-print-date-time{
+    margin-top: 32px;
+  }
+
+  /*票据正文内容*/
+  .main-content {
+    border: 1px solid black;
+    width: 642px;
+    height: 246px;
+    margin-top: 4px;
+    margin-left: 94px;
+  }
+
+  /*没一行都一样的高度*/
+  .each-row{
+    height: 35px;
+    border-bottom: 1px solid black;
+  }
+
+  /*一个个小格子，由于已经有了左边的边框，就只用打印右侧的边框*/
+  .each-cell-border-title{
+    display:table-cell;
+    border-right: 1px solid black;
+    text-align: center;/*水平居中*/
+    align-content: center;
+    height: 35px;
+    vertical-align: middle;/*垂直居中对齐*/
+
+    /*两边留点空间*/
+    padding:0px 5px 0px;
+  }
+
+  /*一个个小格子，由于已经有了左边的边框，就只用打印右侧的边框*/
+  .each-cell-border-content{
+    display:table-cell;
+    border-right: 1px solid black;
+    text-align: left;/*内容居左对齐*/
+    align-content: center;
+    height: 35px;
+    vertical-align: middle;/*垂直居中对齐*/
+
+    /*两边留点空间*/
+    padding:0px 5px 0px;
+  }
+
+  /*金额部分（带 大小写本身的文本的）*/
+  .each-cell-border-with-left-text{
+    display:table-cell;
+    border-right: 1px solid black;
+    text-align: left;
+    align-content: center;
+    height: 35px;
+    vertical-align: middle;
+    /* margin-left: 5px;*/
+    padding-left: 5px;
+  }
+}
+/*用款申请 OVER */

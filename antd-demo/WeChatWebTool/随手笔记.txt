@@ -1,0 +1,224 @@
+说多了都是泪，吸多了都是灰
+
+善于总结、善于思考、善于分析、善于优化。方法是死的，思维是活的；前人只能教你思考的方法，不能教你实际操作的方法
+
+
+2017年加强学习 任务目标
+JavaScript
+ES6
+React
+Node.js
+Redis
+Less
+http
+https
+Vue.js
+WebSocket
+TCP/IP 
+webpack
+
+类的加载，连接和初始化
+
+Java 6种类的主动使用 
+
+new Test();
+
+int b=Test.a;
+Test.a=b;
+
+Test.doSomething();
+
+Class.forName("com.shengsiyuan.Test") 反射
+
+
+class Parent
+{
+}
+class Child extends Parent
+{
+    public static int a =3;
+
+}
+
+Child.a=4;
+
+java com.shengsiyuan.Test
+
+小程序开发成本低，可能会有很多创业者玩家进场，提供小程序定制服务，小程序套模版服务，小程序推广服务，小程序培训，小程序聚合站点等没有壁垒的业务都可以挣钱
+
+react 单数据流 diff 算法 热替换 服务器渲染 虚拟dom
+vue  和angular 双向绑定 俗称mvvm 框架  angular1.5 淘汰 推出 2  用typescript  和 systemjs  强数据类型  加快页面 流畅和性能
+vue 模仿 angular 自己搞了一套  很适合小型项目 使用  html css 要6
+
+Array.from 方法用于将两类对象转为真正的数组
+Array.of   方法用于将一组值，转换为数组   
+
+
+filter            //过滤  返回数组
+map               //遍历
+join()            //var arr=[George,John,Thomas]数组输出 George,John,Thomas 
+concat()          //concat(4,5) concat([]) 合并数组
+
+/*
+*Set结构的实例有四个遍历方法，可以用于遍历成员
+*
+*forEach(), filter(), every() 和some()都会跳过空位。
+*map()会跳过空位，但会保留这个值
+*join()和toString()会将空位视为undefined，而undefined和null会被处理成空字符串
+*/
+Object.keys()     //返回键名的遍历器
+Object.values()   //返回键值的遍历器
+Object.entries()  //返回键值对的遍历器
+Object.assign     //方法用于对象的合并，将源对象（source）的所有可枚举属性，复制到目标对象
+Object.is()       //等于===
+JSON.stringify()  //把值转换为字符串输出
+Array.from        //方法用于将两类对象转为真正的数组：类似数组的对象（array-like object）和可遍历（iterable）的对象（包括ES6新增的数据结构Set和Map）
+JSON.parse()      //方法将一个符合JSON语法的字符串解析成一个对应类型的值或对象，不允许用逗号作为结尾 JSON.parse('true'); JSON.parse('[1, 5, "false"]');
+forEach()         //使用回调函数遍历每个成员
+every()           //
+some()            //
+toString()        //
+
+for(let [key, value] of Object.entries(values)){
+
+Object.assign(values, adPublishContent);
+params = Object.assign({}, params, this._extraParams);
+
+for(let [key, value] of Object.entries(values)){
+  params.push({"operation_sn": key, "inivte_friend_cnt": value});
+}
+
+Object.entries(jsonResult.publishPlanMap).map((items,idxs)=>{
+   items.map((item,idx)=>{
+      console.log(item)
+     });
+   });
+
+
+ let filterValue = this.state.record.filter((ads,idx)=> {
+    return ads.value===value;
+  });
+
+Object.keys(jsonResult).map(key =>{
+  var value = jsonResult[key]
+  return (<li style={{marginBottom:5}}><span>群{key}结果:</span>{value}</li>)
+})
+
+//对象的属性名截取的封装
+       const array = [], busiOptrStr = "business_operator", clusterCountStr = "cluster_count";
+       const processFun = (objKey,value,constKey, array) => {
+         if(objKey.startsWith(constKey)){
+           const index = parseInt(objKey.substring(constKey.length))
+           if(array.length > index){
+             array[index][constKey] = value
+           } else {
+             const obj = {}
+             obj[constKey] = value
+             array.push(obj)
+           }
+         }
+       }
+       for(let [key, value] of Object.entries(values)){
+         processFun(key,value, busiOptrStr, array);
+         processFun(key,value, clusterCountStr, array);
+       }
+       console.log("array",array);
+
+  //数组中的对象去重
+  setUniq(arr){
+    let hash = {};
+    let uni= arr.reduce(function(item, next) {
+    hash[next.transpond_link] ? '' : hash[next.transpond_link] = true && item.push(next);
+    return item
+    }, [])
+    return uni;
+  }
+
+    let wars=["a","b","c","d"];
+    let hers =["1","3","6","9"];
+    let hei={};
+    for(let i=0;i<wars.length;i++){
+      hei[wars[i]]=hers[i];
+    }
+    console.log(hei);
+
+//动态替换js 可以自己手动实现jsonp的调用。
+
+原理很简单，就是用javascript动态加载一个script文件，同时定义一个callback函数给script执行而已
+//定义callback 函数
+var myCallbackFunction = function(data){
+        // 对返回的数据做后续处理
+        alert('uuu:'+JSON.stringify(data));
+    }
+//把callback函数赋给window对象，供script回调   
+window.myCallbackFunction = myCallbackFunction;
+//创建并加载script
+var script = document.createElement('script');
+script.src = 'https://public-api.wordpress.com/rest/v1/sites/wtmpeachtest.wordpress.com/posts?callback=myCallbackFunction';
+document.body.appendChild(script);
+
+
+ 获取当前日期的后几天
+ 
+GetDateStr(AddDayCount) {
+     let dd = new Date();
+     let dataArr=[];
+     for(let i=1;i<=AddDayCount;i++){
+       dd.setDate(dd.getDate()+1);//获取AddDayCount天后的日期
+       let y = dd.getFullYear();
+       let m = dd.getMonth()+1;//获取当前月份的日期
+       let d = dd.getDate();
+       dataArr.push(y+"-"+m+"-"+d);
+     }
+     return dataArr;
+ }
+
+
+
+1、3年互联网相关开发经验，计算机软件工程系，熟练JavaScript，ES6，React，Node.js，webpack，WebSocket，Fetch,antd熟悉页面架构、布局、优化、重构；
+ 
+2、熟悉JavaScript常用的mvc框架React，对模块化、组件化、前后端分离有一定的经验，对预编译语言（如Sass/Less）有所了解，前端项目构建工具Webpack有所了解并有实际项目经验； 
+
+3、熟练使用firebug 或chrome调试，会使用抓包工具分析请求，熟练使用git等工具的； 
+
+4、有后台开发经验，熟悉java 、SSH框架、springMVC,对 struts2,spring,hibernate mysql，SQL Server有实际项目经验； 
+
+5、对前端新技术富有激情，热爱设计编码，有独立分析、解决问题能力，能独立完成开发任务，也能协助团队成员，能在一定压力下工作，具有一定抗压能力；
+
+
+
+
+getScrollTop(){
+    let scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;
+    if(document.body){
+        bodyScrollTop = document.body.scrollTop;
+    }
+    if(document.documentElement){
+        documentScrollTop = document.documentElement.scrollTop;
+    }
+    scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop;
+    return scrollTop;
+    }
+    getScrollHeight(){
+      let scrollHeight = 0, bodyScrollHeight = 0, documentScrollHeight = 0;
+      if(document.body){
+          bodyScrollHeight = document.body.scrollHeight;
+      }
+      if(document.documentElement){
+          documentScrollHeight = document.documentElement.scrollHeight;
+      }
+      scrollHeight = (bodyScrollHeight - documentScrollHeight > 0) ? bodyScrollHeight : documentScrollHeight;
+      return scrollHeight;
+    }
+    getClientHeight(){
+      let windowHeight = 0;
+      if(document.compatMode == "CSS1Compat"){
+          windowHeight = document.documentElement.clientHeight;
+      }else{
+          windowHeight = document.body.clientHeight;
+      }
+      return windowHeight;
+    }
+
+
+
